@@ -2,6 +2,8 @@
 
 **Name:** Samantha Gonzalez
 
+**Student ID:** 801353957
+
 **Course:** ECGR 4106 Introduction to Deep Learning
 
 This repository contains my solutions to Homework 2. The implementations were developed using PyTorch. Some portions of the homework were based on concepts and starter examples provided during lecture. Includes RNN, LSTM, and GRU implementations for character prediction and Tiny Shakespeare experiments.
