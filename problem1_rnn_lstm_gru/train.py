@@ -1,6 +1,7 @@
 # =========================
 # ECGR 4106 Homework 2
 # Name: Samantha Gonzalez
+# Student ID: 801353957
 # Character Prediction with RNN, LSTM, and GRU
 # =========================
 
