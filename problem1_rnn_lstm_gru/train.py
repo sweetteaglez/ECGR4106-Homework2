@@ -14,6 +14,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
+import os
+
+os.makedirs("results", exist_ok=True)
 
 # Reproducibility
 SEED = 42
@@ -272,7 +275,7 @@ for seq_len in SEQ_LENGTHS:
 # =========================
 
 problem1_df = pd.DataFrame(problem1_results)
-problem1_df
+print(problem1_df)
 
 # Save Problem 1 results
 problem1_df.to_csv("results/problem1_results.csv", index=False)
@@ -293,4 +296,106 @@ plt.title("Problem 1 Validation Accuracy Comparison")
 plt.legend()
 plt.grid(True)
 plt.savefig("results/problem1_validation_accuracy_comparison.png")
+plt.show()
+
+# =========================
+# Training Loss Comparison
+# =========================
+
+plt.figure(figsize=(10,6))
+
+for model_type in MODEL_TYPES:
+    subset = problem1_df[problem1_df["model"] == model_type]
+
+    plt.plot(
+        subset["sequence_length"],
+        subset["final_train_loss"],
+        marker="o",
+        linewidth=2,
+        label=model_type
+    )
+
+plt.xlabel("Sequence Length")
+plt.ylabel("Final Training Loss")
+plt.title("Problem 1 Training Loss Comparison")
+plt.grid(True)
+plt.legend()
+
+plt.savefig("results/problem1_training_loss_comparison.png")
+plt.show()
+
+# =========================
+# Training Time Comparison
+# =========================
+
+plt.figure(figsize=(10,6))
+
+x = np.arange(len(MODEL_TYPES))
+width = 0.25
+
+for i, seq_len in enumerate(SEQ_LENGTHS):
+
+    subset = problem1_df[
+        problem1_df["sequence_length"] == seq_len
+    ]
+
+    times = [
+        subset[subset["model"] == m]["training_time_sec"].values[0]
+        for m in MODEL_TYPES
+    ]
+
+    plt.bar(
+        x + i*width,
+        times,
+        width,
+        label=f"Seq {seq_len}"
+    )
+
+plt.xticks(x + width, MODEL_TYPES)
+
+plt.xlabel("Model")
+plt.ylabel("Training Time (seconds)")
+plt.title("Problem 1 Training Time Comparison")
+plt.legend()
+plt.grid(axis="y")
+
+plt.savefig("results/problem1_training_time_comparison.png")
+plt.show()
+
+# =========================
+# Model Complexity Comparison
+# =========================
+
+plt.figure(figsize=(10,6))
+
+x = np.arange(len(MODEL_TYPES))
+width = 0.25
+
+for i, seq_len in enumerate(SEQ_LENGTHS):
+
+    subset = problem1_df[
+        problem1_df["sequence_length"] == seq_len
+    ]
+
+    params = [
+        subset[subset["model"] == m]["parameters"].values[0]
+        for m in MODEL_TYPES
+    ]
+
+    plt.bar(
+        x + i*width,
+        params,
+        width,
+        label=f"Seq {seq_len}"
+    )
+
+plt.xticks(x + width, MODEL_TYPES)
+
+plt.xlabel("Model")
+plt.ylabel("Number of Parameters")
+plt.title("Problem 1 Model Complexity Comparison")
+plt.legend()
+plt.grid(axis="y")
+
+plt.savefig("results/problem1_model_complexity_comparison.png")
 plt.show()
