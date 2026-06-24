@@ -346,7 +346,7 @@ hyperparameter_df.to_csv("results/problem2_hyperparameter_results.csv", index=Fa
 seq50_df.to_csv("results/problem2_seq50_results.csv", index=False)
 
 # =========================
-# Problem 2 Plot
+# Problem 2 Plots
 # =========================
 
 plt.figure(figsize=(10, 6))
@@ -367,12 +367,6 @@ plt.legend()
 plt.grid(True)
 plt.savefig("results/problem2_lstm_gru_validation_accuracy.png")
 plt.show()
-
-# =========================
-# More Problem 2 Plots
-# =========================
-
-os.makedirs("results", exist_ok=True)
 
 # =========================
 # Problem 2 Training Loss Comparison
@@ -594,7 +588,7 @@ plt.savefig("results/problem2_seq50_complexity_comparison.png")
 plt.show()
 
 # =========================
-# Show Generated Text Samples
+# Display Generated Text Samples
 # =========================
 
 for i, row in problem2_df.iterrows():
