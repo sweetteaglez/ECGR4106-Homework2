@@ -369,6 +369,231 @@ plt.savefig("results/problem2_lstm_gru_validation_accuracy.png")
 plt.show()
 
 # =========================
+# More Problem 2 Plots
+# =========================
+
+os.makedirs("results", exist_ok=True)
+
+# =========================
+# Problem 2 Training Loss Comparison
+# =========================
+
+plt.figure(figsize=(10, 6))
+
+for model_type in ["LSTM", "GRU"]:
+    subset = problem2_df[problem2_df["model"] == model_type]
+    plt.plot(
+        subset["sequence_length"],
+        subset["final_train_loss"],
+        marker="o",
+        linewidth=2,
+        label=model_type
+    )
+
+plt.xlabel("Sequence Length")
+plt.ylabel("Final Training Loss")
+plt.title("Problem 2 Training Loss: LSTM vs GRU")
+plt.legend()
+plt.grid(True)
+
+plt.savefig("results/problem2_training_loss_comparison.png")
+plt.show()
+
+# =========================
+# Problem 2 Training Time Comparison
+# =========================
+
+plt.figure(figsize=(10, 6))
+
+x = np.arange(len(["LSTM", "GRU"]))
+width = 0.25
+
+for i, seq_len in enumerate([20, 30]):
+    subset = problem2_df[problem2_df["sequence_length"] == seq_len]
+
+    times = [
+        subset[subset["model"] == model_type]["training_time_sec"].values[0]
+        for model_type in ["LSTM", "GRU"]
+    ]
+
+    plt.bar(
+        x + i * width,
+        times,
+        width,
+        label=f"Seq {seq_len}"
+    )
+
+plt.xticks(x + width / 2, ["LSTM", "GRU"])
+plt.xlabel("Model")
+plt.ylabel("Training Time (seconds)")
+plt.title("Problem 2 Training Time: LSTM vs GRU")
+plt.legend()
+plt.grid(axis="y")
+
+plt.savefig("results/problem2_training_time_comparison.png")
+plt.show()
+
+# =========================
+# Problem 2 Model Complexity Comparison
+# =========================
+
+plt.figure(figsize=(10, 6))
+
+x = np.arange(len(["LSTM", "GRU"]))
+width = 0.25
+
+for i, seq_len in enumerate([20, 30]):
+    subset = problem2_df[problem2_df["sequence_length"] == seq_len]
+
+    params = [
+        subset[subset["model"] == model_type]["parameters"].values[0]
+        for model_type in ["LSTM", "GRU"]
+    ]
+
+    plt.bar(
+        x + i * width,
+        params,
+        width,
+        label=f"Seq {seq_len}"
+    )
+
+plt.xticks(x + width / 2, ["LSTM", "GRU"])
+plt.xlabel("Model")
+plt.ylabel("Number of Parameters")
+plt.title("Problem 2 Model Complexity: LSTM vs GRU")
+plt.legend()
+plt.grid(axis="y")
+
+plt.savefig("results/problem2_model_complexity_comparison.png")
+plt.show()
+
+# =========================
+# Problem 2 Perplexity Comparison
+# =========================
+
+plt.figure(figsize=(10, 6))
+
+for model_type in ["LSTM", "GRU"]:
+    subset = problem2_df[problem2_df["model"] == model_type]
+    plt.plot(
+        subset["sequence_length"],
+        subset["perplexity"],
+        marker="o",
+        linewidth=2,
+        label=model_type
+    )
+
+plt.xlabel("Sequence Length")
+plt.ylabel("Perplexity")
+plt.title("Problem 2 Perplexity: LSTM vs GRU")
+plt.legend()
+plt.grid(True)
+
+plt.savefig("results/problem2_perplexity_comparison.png")
+plt.show()
+
+# =========================
+# Hyperparameter Accuracy Comparison
+# =========================
+
+plt.figure(figsize=(12, 6))
+
+labels = [
+    f"{row['model']}\nH={row['hidden_size']}, L={row['num_layers']}"
+    for _, row in hyperparameter_df.iterrows()
+]
+
+plt.bar(labels, hyperparameter_df["final_val_accuracy"])
+
+plt.xlabel("Model Setting")
+plt.ylabel("Validation Accuracy (%)")
+plt.title("Hyperparameter Validation Accuracy Comparison")
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y")
+plt.tight_layout()
+
+plt.savefig("results/problem2_hyperparameter_accuracy_comparison.png")
+plt.show()
+
+# =========================
+# Hyperparameter Training Time Comparison
+# =========================
+
+plt.figure(figsize=(12, 6))
+
+labels = [
+    f"{row['model']}\nH={row['hidden_size']}, L={row['num_layers']}"
+    for _, row in hyperparameter_df.iterrows()
+]
+
+plt.bar(labels, hyperparameter_df["training_time_sec"])
+
+plt.xlabel("Model Setting")
+plt.ylabel("Training Time (seconds)")
+plt.title("Hyperparameter Training Time Comparison")
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y")
+plt.tight_layout()
+
+plt.savefig("results/problem2_hyperparameter_training_time_comparison.png")
+plt.show()
+
+# =========================
+# Hyperparameter Inference Time Comparison
+# =========================
+
+plt.figure(figsize=(12, 6))
+
+labels = [
+    f"{row['model']}\nH={row['hidden_size']}, L={row['num_layers']}"
+    for _, row in hyperparameter_df.iterrows()
+]
+
+plt.bar(labels, hyperparameter_df["inference_time_sec"])
+
+plt.xlabel("Model Setting")
+plt.ylabel("Inference Time (seconds)")
+plt.title("Hyperparameter Inference Time Comparison")
+plt.xticks(rotation=45, ha="right")
+plt.grid(axis="y")
+plt.tight_layout()
+
+plt.savefig("results/problem2_hyperparameter_inference_time_comparison.png")
+plt.show()
+
+# =========================
+# Sequence Length 50 Accuracy Comparison
+# =========================
+
+plt.figure(figsize=(8, 5))
+
+plt.bar(seq50_df["model"], seq50_df["final_val_accuracy"])
+
+plt.xlabel("Model")
+plt.ylabel("Validation Accuracy (%)")
+plt.title("Sequence Length 50 Validation Accuracy")
+plt.grid(axis="y")
+
+plt.savefig("results/problem2_seq50_accuracy_comparison.png")
+plt.show()
+
+# =========================
+# Sequence Length 50 Complexity Comparison
+# =========================
+
+plt.figure(figsize=(8, 5))
+
+plt.bar(seq50_df["model"], seq50_df["parameters"])
+
+plt.xlabel("Model")
+plt.ylabel("Number of Parameters")
+plt.title("Sequence Length 50 Model Complexity")
+plt.grid(axis="y")
+
+plt.savefig("results/problem2_seq50_complexity_comparison.png")
+plt.show()
+
+# =========================
 # Show Generated Text Samples
 # =========================
 
