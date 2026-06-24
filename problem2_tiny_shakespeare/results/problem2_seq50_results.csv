@@ -1,0 +1,18 @@
+model,sequence_length,hidden_size,num_layers,final_train_loss,final_val_loss,final_val_accuracy,perplexity,training_time_sec,parameters,model_size_mb,generated_text
+LSTM,50,128,1,1.078261422944069,1.0873910696029663,66.05331332833208,2.966524511953791,27.156397581100464,111294,0.42455291748046875,"To be scarcely breather; theref, Volsculd, remise?
+
+AEdile:
+I have rie brought to funt fortuness.
+
+AUFIDIUS:
+He has be none accustach
+That I am know now a begin assain
+I'll deity to pity my noble word.
+
+CO"
+GRU,50,128,1,1.1898459181785583,1.1970944540023805,62.51092773193298,3.3104841712780826,25.449617385864258,86462,0.32982635498046875,"To begman need them and thee. Go who, being promise, with;
+And shows it many pasrieforest, beseech younds and friends
+That he bids by the deep endures shed my fivates;
+I' the people that fiver thine.
+
+Thir"

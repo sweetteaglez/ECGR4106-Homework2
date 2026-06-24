@@ -1,0 +1,38 @@
+model,sequence_length,hidden_size,num_layers,final_train_loss,final_val_loss,final_val_accuracy,perplexity,training_time_sec,inference_time_sec,parameters,model_size_mb,generated_text
+LSTM,30,64,1,1.4242054996490479,1.4306254819869995,56.21293193979097,4.181313710578806,24.087902307510376,0.036824941635131836,41278,0.15746307373046875,"To been: be me it elses things and to blood of Coriolany: yes,
+As you dair face.
+
+Second Citizen:
+Noble-fortunh follow the people a
+posseful taus than welling, arm part tarken and scarthed
+Was torg? What i"
+LSTM,30,128,1,1.1761871593475342,1.1919188344955445,62.611975129602776,3.2933946274604873,24.900543928146362,0.0549774169921875,111294,0.42455291748046875,"To believe you have country heaven-again way again, good
+Whereat for Your Volscians!ow instanth--deying have all.
+
+MARCIUS:
+Here now to Rome, best poor slave,
+Ingrate-like a belly. Hen dight did set here
+Y"
+LSTM,30,128,2,0.9118284407138825,0.9387806128501892,70.38264072944276,2.5568617123352655,29.508066654205322,0.08162832260131836,243390,0.9284591674804688,"To be utwortain where he countesh'd upon thee; and I with a noble hour,
+We do't fire
+Against yourselves loves. Come, come, they dog? you have a proud heart house; which never hear some Hastings wed further"
+GRU,30,64,1,1.481012260866165,1.4827779209136962,54.908652964611356,4.405165902144107,23.251462936401367,0.03605461120605469,32958,0.12572479248046875,"To be it submons against in.
+
+Fill thy heir trungeanst a ears: do gates, carquuse. YouVaid upon his ears alast, in it drat your stosses saw rather for along,
+Did prove gates.
+
+QUEEN
+ELeets abing, the piran"
+GRU,30,128,1,1.2831214305400849,1.2921235696792603,59.68003533863413,3.640509228048048,23.391663789749146,0.03874945640563965,86462,0.32982635498046875,"To beg him.
+
+MENENIUS:
+This is a' battle he's met unkinged, as maligh'd
+conscience you now to you,
+What will had I a darks we hereforn us shows not
+conse co'ts,
+Having hand cause to lifting fire, and easy "
+GRU,30,128,2,1.0982433094024657,1.1198008920669555,64.3469853811405,3.0642440272549623,27.127541065216064,0.0499875545501709,185534,0.7077560424804688,"To be the painton to your no blunt the city only.
+
+VIRGILIA:
+Come, so much once party differing since me the war to than titus than present day's still home,
+I lose a melfsam which else thy preds': he's mo"

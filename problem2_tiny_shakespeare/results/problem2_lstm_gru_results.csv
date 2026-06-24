@@ -1,0 +1,43 @@
+model,sequence_length,hidden_size,num_layers,final_train_loss,final_val_loss,final_val_accuracy,perplexity,training_time_sec,parameters,model_size_mb,approx_complexity,generated_text
+LSTM,20,128,1,1.2727974258899688,1.2926196157455445,59.656090609060904,3.6423155362989053,26.484415769577026,111294,0.42455291748046875,1966080,"To begion of it.
+
+First Murderer:
+And I thou hast spare me.
+
+LARTIUS:
+Most slicumer: may parts
+Insition:
+'Tis not go.
+
+GLOUCESTER:
+He didst
+grown
+Bhody him, of my throphup?
+
+MARCIUS:
+Why, loy'st esus thy h"
+GRU,20,128,1,1.3566990200042726,1.3729560846328734,57.22422242224222,3.9470011365473523,24.170751571655273,86462,0.32982635498046875,1474560,"To be restion to dismes, you know true,
+And pray infed the foot you.
+But no 's humour wonn.
+
+CLARTIUS:
+What no man of his hearts.
+
+Thirdly wont me mercy: one of tecting other. Therefore stopprest o' the ca"
+LSTM,30,128,1,1.1756380517482758,1.1893510343551636,62.76974879565268,3.2849486966456856,25.18696141242981,111294,0.42455291748046875,2949120,"To be vightly have done.
+
+CORIOLANUS:
+Very, speak. They dadves lords!
+
+SICINIUS:
+Then, set me flies
+Are sometimned your surely, wife with him: your executies; he's
+And vain so can decter-bound with her;
+Wh"
+GRU,30,128,1,1.2761363215446473,1.2852459276199342,59.65586504642363,3.6155570132222516,23.454159021377563,86462,0.32982635498046875,2211840,"To be quairtuitus? have did your nature. What enour'd the
+overence us,
+I may the people up, therefore, farewell, my lord, whence your griopity.
+
+MENENIUS:
+Peace, pear; and inheriaght with their
+occefeman i"
